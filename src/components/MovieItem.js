@@ -1,11 +1,15 @@
-const MovieItem = ({ src, date, title, overview }) => {
+
+
+const MovieItem = ({ src, ...movieData}) => {
     return (
         <>
             <li className="movieItem">
                 <img src={src} alt="" />
-                <p>{date}</p>
-                <p>{title}</p>
-                <p>{overview}</p>
+                <p>{movieData.title}</p>
+                <p>{movieData.vote_average}</p>
+                <p>{movieData.release_date}</p>
+                <p>{movieData.overview}</p>
+                <p></p>
             </li>
         </>
     );
