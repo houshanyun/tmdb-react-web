@@ -1,7 +1,8 @@
-
-import Main from "./components/Main"
 import Nav from "./components/Nav"
-import Search from "./components/Search"
+import Header from "./components/Header"
+import Main from "./components/Main"
+import "./App.scss"
+
 
 
 const App = () => {
@@ -9,8 +10,8 @@ const App = () => {
     return (
         <div className="App">
             <Nav />
+            <Header />
             <div className="test">
-                <Search />
             </div>
             <Main />
         </div>

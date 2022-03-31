@@ -1,8 +1,6 @@
 
-
 const MovieItem = ({ src, ...movieData}) => {
-    return (
-        <>
+    return <>
             <li className="movieItem">
                 <img src={src} alt="" />
                 <p>{movieData.title}</p>
@@ -12,7 +10,6 @@ const MovieItem = ({ src, ...movieData}) => {
                 <p></p>
             </li>
         </>
-    );
 }
 
 export default MovieItem;

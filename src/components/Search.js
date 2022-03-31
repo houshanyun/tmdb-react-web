@@ -1,9 +1,8 @@
-
+import "../style/style.scss"
 const Search = () => {
     return (
-        <form>
-            <input type="search" className='movieSearch' id="search"/>
-            <label htmlFor="search" className="searchBtn">電影搜尋</label>
+        <form className="">
+            <input type="search" className='movieSearch' id="search" placeholder="電影搜尋"/>
         </form>
     );
 }

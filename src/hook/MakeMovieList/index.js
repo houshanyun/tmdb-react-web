@@ -12,6 +12,7 @@ export function useGetMovies(api) {
                     setMovies(data.results)
                 }})
             .catch(err => console.log(err))
-        }, [])
+        }, [api])
+        console.log(Movies);
         return Movies;
     }
