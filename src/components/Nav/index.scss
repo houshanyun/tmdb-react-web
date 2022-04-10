@@ -1,84 +1,16 @@
-@import "../../style/style.scss";
+@import '../../style/style.scss';
 
-    @media screen and (max-width: 100vw) {
-        nav {
-            max-width: 100vw;
-            height: 56px;
-            position: relative;
-            .navItem {
-                display: flex;
-                justify-content: flex-start;
-                & > li {
-                    margin-left: 2rem;
-                }
-            }
-            & > form {
-                position: absolute;
-                top: 50%;
-                right: 1rem;
-                transform: translateY(-50%);
-                .movieSearch {
-                    display: none;
-                    height: 2rem;
-                    padding: 1rem;
-                    outline: none;
-                    border: none;
-                    border-radius: 5px;
-                }
+nav {
+    .nav-items {
+        display: flex;
+        justify-content: center;
+        .nav-item {
+            padding: 2rem;
+            & > a {
+                @extend .h4;
+                color: #222;
+                font-weight: 500;
             }
         }
     }
-
-    @media screen and (max-width: 767px) {
-        nav {
-            max-width: 100vw;
-            height: 56px;
-            position: relative;
-            .navItem {
-                width: 50vw;
-                position: absolute;
-                top: 58px;
-                display: none;
-                flex-direction: column;
-                justify-content: center;
-                align-items: flex-start;
-            }
-            & > form {
-                position: absolute;
-                top: 50%;
-                right: 1rem;
-                transform: translateY(-50%);
-                .movieSearch {
-                    display: block;
-                    height: 2rem;
-                    padding: 1rem;
-                    outline: none;
-                    border: none;
-                    border-radius: 5px;
-                }
-            }
-        }
-
-        .hamburger {
-            position: absolute;
-            background-color: #fff;
-            width: 40px;
-            height: 3px;
-            top: 50%;
-            left: 1rem;
-            transform: translateY(-50%);
-            box-shadow: 0 10px #fff, 0 -10px #fff;
-            &.active {
-                box-shadow: none;
-            }
-        }
-    }
-
-
-
-
-
-@media screen and (max-width: 420px) {
-
 }
-

@@ -1,21 +1,24 @@
 
 import { NOW_PLAYING } from "../constant/API"
-import { imgBaseUrl } from "../constant/API"
-import MovieItem from "../components/MovieItem"
+import { IMAGE_BASE_URL } from "../constant/API"
+import MovieItem from "../global/MovieItem"
 import { useGetMovies } from "../hook/MakeMovieList"
+import Title from "../global/Title"
+import { itemNames } from "../constant/STRING"
 
 const NowPlaying = () => {
 
     const nowPlaying = useGetMovies(NOW_PLAYING)
 
     return <>
-        <ul className="nowPlaying">
+        <Title home={itemNames[2]}/>
+        <ul className="now-playing">
         {
             nowPlaying.map(movieData => {
                 return <MovieItem
                     {...movieData}
                     key={movieData.id}
-                    src={`${imgBaseUrl}300${movieData.poster_path}`}
+                    src={`${IMAGE_BASE_URL}w300${movieData.poster_path}`}
                 />
             })
         }

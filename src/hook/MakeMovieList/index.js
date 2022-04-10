@@ -6,13 +6,13 @@ export function useGetMovies(api) {
             fetch(api)
             .then(res => res.json())
             .then(data => {
-                if(!Boolean(data.results)) {
+                if(!data.results) {
                     setMovies(data)
                 } else {
                     setMovies(data.results)
                 }})
-            .catch(err => console.log(err))
+            .catch(err => console.error(err))
+
         }, [api])
-        console.log(Movies);
         return Movies;
     }

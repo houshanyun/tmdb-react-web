@@ -1,20 +1,23 @@
 import { WEEK_TRENDING } from "../constant/API"
-import { imgBaseUrl } from "../constant/API"
-import MovieItem from "../components/MovieItem"
+import { IMAGE_BASE_URL } from "../constant/API"
+import MovieItem from "../global/MovieItem"
 import { useGetMovies } from "../hook/MakeMovieList"
+import Title from "../global/Title"
+import { itemNames } from "../constant/STRING"
 
 const Home = () => {
 
     const weekTrending = useGetMovies(WEEK_TRENDING)
 
     return <>
-        <ul className="weekTrending">
+        <Title home={itemNames[0]}/>
+        <ul className="week-trending">
         {
             weekTrending.map(movieData => {
                 return <MovieItem
                     {...movieData}
                     key={movieData.id}
-                    src={`${imgBaseUrl}300${movieData.poster_path}`}
+                    src={`${IMAGE_BASE_URL}w300${movieData.poster_path}`}
                 />
             })
         }

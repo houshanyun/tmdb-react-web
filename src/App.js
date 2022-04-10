@@ -1,9 +1,8 @@
 import Nav from "./components/Nav"
 import Header from "./components/Header"
 import Main from "./components/Main"
+import Footer from "./components/Footer"
 import "./App.scss"
-
-
 
 const App = () => {
 
@@ -11,9 +10,8 @@ const App = () => {
         <div className="App">
             <Nav />
             <Header />
-            <div className="test">
-            </div>
             <Main />
+            <Footer />
         </div>
     )
 }

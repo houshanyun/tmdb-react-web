@@ -1,0 +1,1 @@
+export const itemNames = ['熱門趨勢', '流行電影', '現正熱映', '即將上映']
