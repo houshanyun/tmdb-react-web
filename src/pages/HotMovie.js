@@ -6,15 +6,32 @@ import { useGetMovies } from "../hook/MakeMovieList"
 import LoadMovies from "../global/LoadMovies"
 import Title from "../global/Title"
 import { itemNames } from "../constant/STRING"
+import { useEffect, useState } from "react";
 
 const HotMovie = () => {
-    const hotMovies = useGetMovies(HOT_MOVIES())
-    if (!hotMovies) return <div>loading...</div>
+    const [movies, setMovies] = useState([])
+    const [page, setPage] =useState(1)
+    useEffect(() => {
+        fetch(HOT_MOVIES(page))
+            .then(res => {
+                if (!res.ok) return res.status.toString()
+                return res.json()
+            })
+            .then(data => {
+                setMovies(prev => [...prev, ...data.results])
+            })
+            .catch(error => console.error(error.massage))
+    }, [page])
+    useEffect(() => {
+        console.log('updated!!!')
+    }, [movies])
+
+    if (movies.length === 0) return <div>loading...</div>
     return <>
         <Title home={itemNames[1]}/>
         <ul className="hot-movie">
             {
-                hotMovies.map(movieData => {
+                movies.map(movieData => {
                     return <MovieItem
                         {...movieData}
                         key={movieData.id}
@@ -23,7 +40,7 @@ const HotMovie = () => {
                 })
             }
         </ul>
-        <LoadMovies />
+        <LoadMovies setPage={setPage}/>
     </>
 }
 

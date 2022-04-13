@@ -5,13 +5,10 @@ import MovieCard from "../../global/MovieCard"
 import { NOW_PLAYING } from "../../constant/API"
 import "./index.scss"
 
-
-
-
 const Header = () => {
 
     const nowPlayingMovies = useGetMovies(NOW_PLAYING)
-    const carouselMovies = nowPlayingMovies.filter(movie => movie.backdrop_path && movie.vote_average > 7)
+    const carouselMovies = nowPlayingMovies.filter(movie => movie.backdrop_path && movie.vote_average > 7.5)
     const [currentImage, setCurrentImage] = useState(0)
     const refBack = useRef(null)
     const refText = useRef(null)

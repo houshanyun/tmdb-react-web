@@ -1,15 +1,77 @@
 @import '../../style/style.scss';
 
+@keyframes nav-tabs {
+    0% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(1rem);
+        opacity: 0;
+    }
+
+}
+
 nav {
+    position: relative;
+    .nav-tabs {
+        position: absolute;
+        bottom: -42rem;
+        left: 7rem;
+        color: #fa0;
+        text-align: center;
+        cursor: default;
+        user-select: none;
+
+        & span:nth-of-type(1) {
+            padding: 1rem 0;
+        }
+        & span:nth-of-type(2) {
+            animation: nav-tabs 1s ease-in-out infinite;
+        }
+        & span:nth-of-type(3) {
+            animation: nav-tabs 1s ease-in-out infinite;
+        }
+        & span:nth-of-type(4) {
+            animation: nav-tabs 1s ease-in-out infinite;
+        }
+        & > span {
+            display: block;
+        }
+    }
     .nav-items {
         display: flex;
         justify-content: center;
         .nav-item {
+            position: relative;
             padding: 2rem;
+            &.active a{
+                color: $color-1;
+            }
+            &:hover a {
+                color: $color-1;
+            }
+
+            &:hover::after {
+                width: calc(100% - 4rem);
+            }
+            &::after{
+                content: '';
+                position: absolute;
+                bottom: 1rem;
+                left: 2rem;
+                width: 0;
+                height: 3px;
+                background-color: $color-1;;
+                transition: width .3s linear;
+            }
             & > a {
+                //padding: 2rem;
                 @extend .h4;
                 color: #222;
                 font-weight: 500;
+                transition: color .3s linear;
+
             }
         }
     }

@@ -11,6 +11,10 @@ main {
             user-select: none;
         }
     }
+    .not-found {
+        text-align: center;
+        padding: 5rem 0 0;
+    }
     .week-trending {
         max-width: 1200px;
         display: flex;

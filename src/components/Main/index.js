@@ -16,6 +16,14 @@ const Main = () => {
                 <Route path="/HotMovie" element={<HotMovie />} />
                 <Route path="/NowPlaying" element={<NowPlaying />} />
                 <Route path="/UpComing" element={<UpComing />} />
+                <Route
+                    path="*"
+                    element={
+                        <main>
+                            <h2 className="not-found">Here Nothing!!!</h2>
+                        </main>
+                    }
+                />
             </Routes>
     </main>
 }

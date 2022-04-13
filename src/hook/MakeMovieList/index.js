@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { HOT_MOVIES } from '../../constant/API'
 
 export function useGetMovies(api) {
         const [Movies, setMovies] = useState([])
@@ -12,7 +13,6 @@ export function useGetMovies(api) {
                     setMovies(data.results)
                 }})
             .catch(err => console.error(err))
-
         }, [api])
         return Movies;
     }
