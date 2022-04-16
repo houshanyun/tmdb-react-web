@@ -52,6 +52,13 @@ const Header = () => {
         }
     }
 
+    if (!carouselMovies) {
+            setTimeout(async ()=> {
+                console.log('aaa');
+            }, 3000)
+        return <div>loading...</div>
+    }
+
     return <header>
             <div className="carousel-wrapper">
                 <div className="carousel-images">

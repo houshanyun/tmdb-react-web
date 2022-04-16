@@ -1,6 +1,5 @@
 import { useReducer } from 'react'
 import { Link, Outlet } from "react-router-dom"
-import { itemNames } from '../../constant/STRING'
 import Title from '../../global/Title'
 import "./index.scss"
 
@@ -26,36 +25,32 @@ const Nav = () => {
         dispatch({type: e.target.innerText})
     }
     return <nav>
-        <Title webName={true}/>
-        <div className="hamburger"></div>
-        <ul className="nav-items" onClick={handleClickNav}>
-            <li className={
-                state.click && state.show === 0
-                ? 'nav-item active'
-                : 'nav-item'
-                } ><Link to="/">熱門趨勢</Link></li>
-            <li className={
-                state.click && state.show === 1
-                ? 'nav-item active'
-                : 'nav-item'
-                }><Link to="/HotMovie">流行電影</Link></li>
-            <li className={
-                state.click && state.show === 2
-                ? 'nav-item active'
-                : 'nav-item'
-                }><Link to="/NowPlaying">現正熱映</Link></li>
-            <li className={
-                state.click && state.show === 3
-                ? 'nav-item active'
-                : 'nav-item'
-                }><Link to="/UpComing">即將上映</Link></li>
-        </ul>
-        <Outlet />
-        <div className="nav-tabs">
-            <span>{itemNames[state.show]}</span>
-            <span>&or;</span>
-            <span>&or;</span>
-            <span>&or;</span>
+        <div className="nav-wrapper">
+            <Title webName={true}/>
+            <div className="hamburger"></div>
+            <ul className="nav-items" onClick={handleClickNav}>
+                <li className={
+                    state.click && state.show === 0
+                    ? 'nav-item active'
+                    : 'nav-item'
+                    } ><Link to="/">熱門趨勢</Link></li>
+                <li className={
+                    state.click && state.show === 1
+                    ? 'nav-item active'
+                    : 'nav-item'
+                    }><Link to="/HotMovie">流行電影</Link></li>
+                <li className={
+                    state.click && state.show === 2
+                    ? 'nav-item active'
+                    : 'nav-item'
+                    }><Link to="/NowPlaying">現正熱映</Link></li>
+                <li className={
+                    state.click && state.show === 3
+                    ? 'nav-item active'
+                    : 'nav-item'
+                    }><Link to="/UpComing">即將上映</Link></li>
+            </ul>
+            <Outlet />
         </div>
     </nav>
 }

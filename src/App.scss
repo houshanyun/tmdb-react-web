@@ -9,6 +9,11 @@
     font-family: 'Noto Sans TC', sans-serif;
 }
 
+@keyframes to-top {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(-30%);}
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -40,15 +45,17 @@ a {
     position: fixed;
     bottom: 3rem;
     right: 5rem;
+    color: #aaa;
     font-size: 3rem;
     font-weight: 700;
     transition: all .2s ease-in;
     cursor: n-resize;
+    animation: to-top .8s linear infinite alternate-reverse;
     &:hover  {
-        color: #aaa;
+        color: #fa0;
     }
     &:hover::before {
-        background-color: #aaa;
+        background-color: #fa0;
     }
     &:before {
         content: '';
@@ -57,7 +64,7 @@ a {
         left: 0;
         width: 100%;
         height: 5px;
-        background-color: #000;
+        background-color: #aaa;
     }
 }
 
