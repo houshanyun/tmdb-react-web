@@ -1,6 +1,7 @@
 import { useReducer } from 'react'
 import { Link, Outlet } from "react-router-dom"
 import { itemNames } from '../../constant/STRING'
+import Title from '../../global/Title'
 import "./index.scss"
 
 function reducer(state, active) {
@@ -18,12 +19,14 @@ function reducer(state, active) {
     }
 }
 
+
 const Nav = () => {
     const [state, dispatch] = useReducer(reducer, {click: false, show: 0})
     function handleClickNav(e) {
         dispatch({type: e.target.innerText})
     }
     return <nav>
+        <Title webName={true}/>
         <div className="hamburger"></div>
         <ul className="nav-items" onClick={handleClickNav}>
             <li className={

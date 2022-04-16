@@ -12,19 +12,42 @@
 
 }
 
+@keyframes nav-tabs-name {
+    0% {transform: translateY(0);}
+    100% {transform: translateY(30%);}
+}
+
 nav {
     position: relative;
+    //background-color: #fa0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .web-name {
+        position: absolute;
+        top: 0;
+        left: 2rem;
+        font-size: 2rem;
+        color: #2196F3;
+        user-select: none;
+    }
     .nav-tabs {
         position: absolute;
-        bottom: -42rem;
-        left: 7rem;
+        bottom: -6rem;
+        left: 2rem;
         color: #fa0;
         text-align: center;
         cursor: default;
         user-select: none;
+        @media screen and (max-width: 1440px) {
+            display: none;
+        }
 
         & span:nth-of-type(1) {
             padding: 1rem 0;
+            animation: nav-tabs-name 1s ease-in-out infinite alternate;
         }
         & span:nth-of-type(2) {
             animation: nav-tabs 1s ease-in-out infinite;

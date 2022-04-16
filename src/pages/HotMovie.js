@@ -2,7 +2,6 @@
 import { HOT_MOVIES } from "../constant/API";
 import { IMAGE_BASE_URL } from "../constant/API"
 import MovieItem from "../global/MovieItem"
-import { useGetMovies } from "../hook/MakeMovieList"
 import LoadMovies from "../global/LoadMovies"
 import Title from "../global/Title"
 import { itemNames } from "../constant/STRING"

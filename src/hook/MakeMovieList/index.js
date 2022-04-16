@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { HOT_MOVIES } from '../../constant/API'
 
 export function useGetMovies(api) {
         const [Movies, setMovies] = useState([])

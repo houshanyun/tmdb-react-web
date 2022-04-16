@@ -88,6 +88,7 @@ const Header = () => {
             </div>
 
             <div className="scroll-icon"></div>
+
             <ul className="dot-group">
                     {
                         carouselMovies.map((movie , index) => {
