@@ -7,8 +7,6 @@ import ToTop from "./global/ToTop"
 
 const App = () => {
 
-
-
     return (
         <div className="App">
             <ToTop />

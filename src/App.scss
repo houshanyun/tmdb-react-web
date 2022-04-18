@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap');
-@import "./style/normalize.scss";
+@use "./style/normalize.scss";
 
 * {
     margin: 0;
